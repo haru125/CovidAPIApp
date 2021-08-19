@@ -2,7 +2,7 @@
 //  CircleChartViewController.swift
 //  CovidAPIApp
 //
-//  Created by Satoshi Ota on 2021/08/16.
+//  Created by Satoshi Ota on 2021/08/19.
 //
 
 import UIKit
