@@ -10,10 +10,17 @@ import UIKit
 class ChartViewController: UIViewController {
     
     let colors = Colors()
-
+    var prefecture = UILabel()
+    var pcr = UILabel()
+    var pcrCount = UILabel()
+    var cases = UILabel()
+    var caseCount = UILabel()
+    var deaths = UILabel()
+    var deathsCount = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 60)
         gradientLayer.colors = [colors.bluePurple.cgColor, colors.blue.cgColor,]
@@ -45,6 +52,16 @@ class ChartViewController: UIViewController {
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: colors.bluePurple], for: .normal)
         segment.addTarget(self, action: #selector(switchAction), for: .valueChanged)
         view.addSubview(segment)
+        
+        let searchBar = UISearchBar()
+        searchBar.frame = CGRect(x: 10, y: 100, width: view.frame.size.width - 20, height: 20)
+        searchBar.delegate = self
+        searchBar.placeholder = "都道府県を漢字で入力"
+        searchBar.showsCancelButton = true
+        searchBar.tintColor = colors.blue
+        view.addSubview(searchBar)
+        
+        view.backgroundColor = .systemGroupedBackground
     }
     @objc func switchAction(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -65,5 +82,14 @@ class ChartViewController: UIViewController {
     @objc func goCircle() {
         print("tappedNextButton")
     }
-    
 }
+//MARK: UISearchBarDelegate
+extension ChartViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("検索ボタンがタップ")
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("キャンセルボタンがタップ")
+    }
+}
+

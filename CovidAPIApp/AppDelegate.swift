@@ -6,16 +6,16 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
-        CovidAPI.getPrefecture(completion: {(result: [CovidInfo.Prefecture]) -> Void in
-            CovidSingleton.shared.prefecture = result
-        })
+//        FirebaseApp.configure()
+//        CovidAPI.getPrefecture(completion: {(result: [CovidInfo.Prefecture]) -> Void in
+//            CovidSingleton.shared.prefecture = result
+//        })
         return true
     }
 
