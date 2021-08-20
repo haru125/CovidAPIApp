@@ -7,12 +7,25 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+//        Firestore.firestore().collection("users").document("Message").setData([
+//            "UserMessage": "message",
+//            "Date": "messageDate",
+//            "UserId": "messageId"
+//        ],merge: false) { err in
+//            if let err = err {
+//                print("Error writing document: \(err)")
+//            } else {
+//                print("Document successfully written!")
+//            }
+//        }
+        
         CovidAPI.getPrefecture(completion: {(result: [CovidInfo.Prefecture]) -> Void in
             CovidSingleton.shared.prefecture = result
         })
