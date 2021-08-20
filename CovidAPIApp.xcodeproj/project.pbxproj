@@ -12,6 +12,7 @@
 		171102C826C5406700F38DE6 /* HealthCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171102C726C5406700F38DE6 /* HealthCheckViewController.swift */; };
 		171102CA26C75D6A00F38DE6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171102C926C75D6A00F38DE6 /* ChartViewController.swift */; };
 		17394E1F26CDEF3100F2A69C /* CircleChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17394E1E26CDEF3100F2A69C /* CircleChartViewController.swift */; };
+		17394E2126CF3B2000F2A69C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17394E2026CF3B2000F2A69C /* GoogleService-Info.plist */; };
 		17C038F026CBC207004B0055 /* CovidSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C038EF26CBC207004B0055 /* CovidSingleton.swift */; };
 		17D326AC26B8A03300190BF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D326AB26B8A03300190BF2 /* AppDelegate.swift */; };
 		17D326AE26B8A03300190BF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D326AD26B8A03300190BF2 /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		171102C726C5406700F38DE6 /* HealthCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCheckViewController.swift; sourceTree = "<group>"; };
 		171102C926C75D6A00F38DE6 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		17394E1E26CDEF3100F2A69C /* CircleChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartViewController.swift; sourceTree = "<group>"; };
+		17394E2026CF3B2000F2A69C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17C038EF26CBC207004B0055 /* CovidSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSingleton.swift; sourceTree = "<group>"; };
 		17D326A826B8A03300190BF2 /* CovidAPIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidAPIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D326AB26B8A03300190BF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				17D326AB26B8A03300190BF2 /* AppDelegate.swift */,
 				17D326AD26B8A03300190BF2 /* SceneDelegate.swift */,
 				17D326B926B8A03800190BF2 /* Info.plist */,
+				17394E2026CF3B2000F2A69C /* GoogleService-Info.plist */,
 			);
 			path = CovidAPIApp;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17394E2126CF3B2000F2A69C /* GoogleService-Info.plist in Resources */,
 				17D326B826B8A03800190BF2 /* LaunchScreen.storyboard in Resources */,
 				17D326B526B8A03800190BF2 /* Assets.xcassets in Resources */,
 				17D326B326B8A03300190BF2 /* Main.storyboard in Resources */,

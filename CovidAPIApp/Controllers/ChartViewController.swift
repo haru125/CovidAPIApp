@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 class ChartViewController: UIViewController {
     
@@ -14,9 +15,11 @@ class ChartViewController: UIViewController {
     var pcr = UILabel()
     var pcrCount = UILabel()
     var cases = UILabel()
-    var caseCount = UILabel()
+    var casesCount = UILabel()
     var deaths = UILabel()
     var deathsCount = UILabel()
+    var array:[CovidInfo.Prefecture] = []
+    var chartView:HorizontalBarChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,15 +74,58 @@ class ChartViewController: UIViewController {
         uiView.layer.shadowRadius = 10
         view.addSubview(uiView)
         
-        bottomLabel(uiView, 1, 10, text: "東京", size: 30, weight: .ultraLight, color: colors.black)
-        bottomLabel(uiView, 0.39, 50, text: "PCR数", size: 15, weight: .bold, color: colors.bluePurple)
-        bottomLabel(uiView, 0.39, 85, text: "2222222", size: 30, weight: .bold, color: colors.blue)
-        bottomLabel(uiView, 1, 50, text: "感染者数", size: 15, weight: .bold, color: colors.bluePurple)
-        bottomLabel(uiView, 1, 85, text: "22222", size: 30, weight: .bold, color: colors.blue)
-        bottomLabel(uiView, 1.61, 50, text: "死者数", size: 15, weight: .bold, color: colors.bluePurple)
-        bottomLabel(uiView, 1.61, 85, text: "2222", size: 30, weight: .bold, color: colors.blue)
+        bottomLabel(uiView, prefecture, 1, 10, text: "東京", size: 30, weight: .ultraLight, color: colors.black)
+        bottomLabel(uiView, pcr, 0.39, 50, text: "PCR数", size: 15, weight: .bold, color: colors.bluePurple)
+        bottomLabel(uiView, pcrCount, 0.39, 85, text: "2222222", size: 30, weight: .bold, color: colors.blue)
+        bottomLabel(uiView, cases ,1, 50, text: "感染者数", size: 15, weight: .bold, color: colors.bluePurple)
+        bottomLabel(uiView, casesCount, 1, 85, text: "22222", size: 30, weight: .bold, color: colors.blue)
+        bottomLabel(uiView, deaths, 1.61, 50, text: "死者数", size: 15, weight: .bold, color: colors.bluePurple)
+        bottomLabel(uiView, deathsCount, 1.61, 85, text: "2222", size: 30, weight: .bold, color: colors.blue)
         
         view.backgroundColor = .systemGroupedBackground
+        
+        for i in 0..<CovidSingleton.shared.prefecture.count {
+            if CovidSingleton.shared.prefecture[i].name_ja == "北海道" {
+                prefecture.text = CovidSingleton.shared.prefecture[i].name_ja
+                pcrCount.text = "\(CovidSingleton.shared.prefecture[i].pcr)"
+                casesCount.text = "\(CovidSingleton.shared.prefecture[i].cases)"
+                deathsCount.text = "\(CovidSingleton.shared.prefecture[i].deaths)"
+            }
+        }
+        
+        chartView = HorizontalBarChartView(frame: CGRect(x: 0, y: 150, width: view.frame.size.width, height: 300))
+        chartView.animate(yAxisDuration: 1.0, easingOption: .easeInCirc)
+        chartView.xAxis.labelCount = 10
+        chartView.xAxis.labelTextColor = colors.bluePurple
+        chartView.doubleTapToZoomEnabled = false
+        chartView.delegate = self
+        chartView.pinchZoomEnabled = false
+        chartView.leftAxis.labelTextColor = colors.bluePurple
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.legend.enabled = false
+        chartView.rightAxis.enabled = false
+        
+        array = CovidSingleton.shared.prefecture
+        dataSet()
+    }
+    func dataSet() {
+        var names:[String] = []
+        for i in 0...9 {
+            names += ["\(self.array[i].name_ja)"]
+        }
+        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: names)
+        
+        var entries:[BarChartDataEntry] = []
+        for i in 0...9 {
+            entries += [BarChartDataEntry(x: Double(i), y: Double(array[i].cases))]
+        }
+        
+        let set = BarChartDataSet(entries: entries, label: "県別状況")
+        set.colors = [colors.blue]
+        set.valueTextColor = colors.bluePurple
+        set.valueTextColor = colors.white
+        chartView.data = BarChartData(dataSet: set)
+        view.addSubview(chartView)
     }
     @objc func switchAction(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -100,8 +146,7 @@ class ChartViewController: UIViewController {
     @objc func goCircle() {
         print("tappedNextButton")
     }
-    func bottomLabel(_ parentView: UIView, _ x: CGFloat,_ y: CGFloat, text: String, size: CGFloat, weight: UIFont.Weight, color: UIColor) {
-        let label = UILabel()
+    func bottomLabel(_ parentView: UIView, _ label: UILabel, _ x: CGFloat,_ y: CGFloat, text: String, size: CGFloat, weight: UIFont.Weight, color: UIColor) {
         label.text = text
         label.textColor = color
         label.textAlignment = .center
@@ -120,5 +165,9 @@ extension ChartViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         print("キャンセルボタンがタップ")
     }
+}
+//MARK:
+extension ChartViewController: ChartViewDelegate {
+    
 }
 

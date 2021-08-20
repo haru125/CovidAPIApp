@@ -14,4 +14,5 @@ target 'CovidAPIApp' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Storage'
+  pod 'Charts'
 end

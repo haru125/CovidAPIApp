@@ -1,5 +1,8 @@
 PODS:
   - CalculateCalendarLogic (0.5.0)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - Firebase/Analytics (8.6.0):
     - Firebase/Core
   - Firebase/Auth (8.6.0):
@@ -117,6 +120,7 @@ PODS:
 
 DEPENDENCIES:
   - CalculateCalendarLogic
+  - Charts
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -128,6 +132,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - CalculateCalendarLogic
+    - Charts
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -148,6 +153,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   CalculateCalendarLogic: d14189787cd47766e64281b2686608afea07ae4d
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Firebase: 21ac9f28b09a8bdfc005f34c984fca84e7e8786d
   FirebaseAnalytics: 8f32ae54ad42754f503354782575c4ddfc1425c3
   FirebaseAuth: 223adeeb2262b417532e89bf06a960e3a0a1e9e4
@@ -166,6 +172,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: d3dc11f8fc8a0640bf2fd40c65fb64569ef2f9cc
+PODFILE CHECKSUM: b0b5d493ac279a5ac10d41145c8585e8aa0d5f60
 
 COCOAPODS: 1.10.0
