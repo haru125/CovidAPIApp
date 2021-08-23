@@ -146,7 +146,7 @@ class CircleChartViewController: UIViewController {
             pattern = "cases"
         case 1:
             pattern = "pcr"
-        case 3:
+        case 2:
             pattern = "deaths"
         default:
             break

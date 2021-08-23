@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1709BA0126CFC68400B78E90 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709BA0026CFC68400B78E90 /* ChatViewController.swift */; };
+		1709BA0526D056E500B78E90 /* FirestoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1709BA0426D056E500B78E90 /* FirestoreData.swift */; };
 		171102B926C4A3C500F38DE6 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171102B826C4A3C500F38DE6 /* Entity.swift */; };
 		171102BE26C4A56700F38DE6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171102BD26C4A56700F38DE6 /* API.swift */; };
 		171102C826C5406700F38DE6 /* HealthCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171102C726C5406700F38DE6 /* HealthCheckViewController.swift */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		02670B41016674D58B532C25 /* Pods_CovidAPIApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidAPIApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10694F7E8BABF59E090B0F4C /* Pods-CovidAPIApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidAPIApp.release.xcconfig"; path = "Target Support Files/Pods-CovidAPIApp/Pods-CovidAPIApp.release.xcconfig"; sourceTree = "<group>"; };
+		1709BA0026CFC68400B78E90 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1709BA0426D056E500B78E90 /* FirestoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreData.swift; sourceTree = "<group>"; };
 		171102B826C4A3C500F38DE6 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		171102BD26C4A56700F38DE6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		171102C726C5406700F38DE6 /* HealthCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCheckViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 				171102B826C4A3C500F38DE6 /* Entity.swift */,
 				171102BD26C4A56700F38DE6 /* API.swift */,
 				17C038EF26CBC207004B0055 /* CovidSingleton.swift */,
+				1709BA0426D056E500B78E90 /* FirestoreData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -86,6 +91,7 @@
 				171102C726C5406700F38DE6 /* HealthCheckViewController.swift */,
 				171102C926C75D6A00F38DE6 /* ChartViewController.swift */,
 				17394E1E26CDEF3100F2A69C /* CircleChartViewController.swift */,
+				1709BA0026CFC68400B78E90 /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,10 +262,12 @@
 			files = (
 				17D326B026B8A03300190BF2 /* ViewController.swift in Sources */,
 				171102B926C4A3C500F38DE6 /* Entity.swift in Sources */,
+				1709BA0126CFC68400B78E90 /* ChatViewController.swift in Sources */,
 				171102C826C5406700F38DE6 /* HealthCheckViewController.swift in Sources */,
 				17C038F026CBC207004B0055 /* CovidSingleton.swift in Sources */,
 				17D326C026B940EF00190BF2 /* Color.swift in Sources */,
 				17D326AC26B8A03300190BF2 /* AppDelegate.swift in Sources */,
+				1709BA0526D056E500B78E90 /* FirestoreData.swift in Sources */,
 				171102CA26C75D6A00F38DE6 /* ChartViewController.swift in Sources */,
 				17394E1F26CDEF3100F2A69C /* CircleChartViewController.swift in Sources */,
 				171102BE26C4A56700F38DE6 /* API.swift in Sources */,

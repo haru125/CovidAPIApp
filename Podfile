@@ -16,4 +16,6 @@ target 'CovidAPIApp' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'Charts'
+  pod 'MessageKit'
+  pod 'MessageInputBar'
 end
